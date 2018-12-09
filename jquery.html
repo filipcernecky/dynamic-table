@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style media="screen">
+      .style1 { background-color: lightgreen; text-align: center; width: 250px; margin:auto;
+                font-size: 28px;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+     <div class="style1" onClick="hideDiv()" id="div1">
+       Akademia SOVY
+
+     </div>
+     <button id="btnShow">Show content</button>
+     <button onclick="toggleDiv()">Toggle content</button>
+     <button id="biggerDiv">Bigger content</button>
+  <script type="text/javascript">
+    let visibleDiv=true;
+    function hideDiv(){
+      //document.getElementById('div1').style.display='none';
+      $('#div1').hide(2000);
+      visibleDiv=false;
+    }
+    function showDiv(){
+      //document.getElementById('div1').style.display='block';
+      $('#div1').show(4000);
+      visibleDiv=true;
+    }
+    $("#btnShow").click( function(){
+      $('#div1').show(4000);
+      visibleDiv=true;
+    });
+    $("#biggerDiv").click( function(){
+      $('#div1').animate({width: '400px', height: '100px', opacity: '0.2'});
+    });
+    function toggleDiv(){
+      document.getElementById('div1').style.display='block';
+      visibleDiv=!visibleDiv;
+      if(visibleDiv)
+          showDiv();
+       else {
+          hideDiv();
+       }
+    }
+  </script>
+  </body>
+</html>
