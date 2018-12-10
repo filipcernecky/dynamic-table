@@ -137,13 +137,6 @@
         $('#lname').val('');
         $('#age').val('');
       }
-	/*  for(i=0;i<person.rows.length;i++){
-	  for(j=0;j<person.rows[i].cells.length;j++){
-		person.rows[i].cells[j].onclick=function(i,j){
-		console.log(i+":"+j)
-		}.bind(null,i,j)
-		}
-      } */
       $('#btnSave').click( ()=>{
           if (typeof(Storage) !== "undefined") {
                 let text=JSON.stringify(persons);
